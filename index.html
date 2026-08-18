@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
   <meta charset="UTF-8">
 
   <meta
@@ -10,797 +8,692 @@
     content="width=device-width, initial-scale=1.0, viewport-fit=cover"
   >
 
-  <title>
-    Grupo de Ofertas | Supermercado Paineiras
-  </title>
+  <title>Grupo de Ofertas | Supermercado Paineiras</title>
 
   <meta
     name="description"
     content="Entre no grupo de ofertas do Supermercado Paineiras no WhatsApp."
   >
 
-  <meta
-    name="theme-color"
-    content="#e31e2f"
-  >
-
-
-  <!--
-  ========================================
-  META PIXEL
-
-  Depois vamos adicionar aqui
-  o código do Meta Pixel.
-  ========================================
-  -->
-
+  <meta name="theme-color" content="#e31e2f">
 
   <style>
-
     :root {
-
       --red: #e31e2f;
-
       --red-dark: #bd1220;
-
       --yellow: #ffd83d;
-
       --green: #20bd5a;
-
       --white: #ffffff;
-
     }
-
-
 
     * {
-
       box-sizing: border-box;
-
     }
-
-
 
     html,
     body {
-
       margin: 0;
-
       min-height: 100%;
-
     }
 
-
-
     body {
-
       min-height: 100dvh;
-
       font-family:
         Inter,
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
         sans-serif;
-
       background: #f2f2f2;
-
       color: var(--white);
-
     }
 
-
-
-    /* ========================================
+    /* =========================
        PÁGINA
-    ======================================== */
-
+    ========================= */
 
     .page {
-
       position: relative;
 
       width: min(100%, 480px);
-
       min-height: 100dvh;
 
       margin: 0 auto;
 
-
       padding:
-
-        max(
-          30px,
-          env(safe-area-inset-top)
-        )
-
-        24px
-
-        max(
-          28px,
-          env(safe-area-inset-bottom)
-        );
-
+        max(22px, env(safe-area-inset-top))
+        20px
+        max(24px, env(safe-area-inset-bottom));
 
       display: flex;
-
       flex-direction: column;
-
-      justify-content: center;
-
       align-items: center;
-
 
       text-align: center;
 
-
       overflow: hidden;
 
-
       background:
-
         radial-gradient(
-
           circle at 50% 5%,
-
           rgba(255,255,255,.18),
-
           transparent 28%
-
         ),
-
         linear-gradient(
-
           160deg,
-
           #f22c3c 0%,
-
           var(--red) 48%,
-
           var(--red-dark) 100%
-
         );
 
-
-      box-shadow:
-
-        0 0 50px
-        rgba(0,0,0,.12);
-
+      box-shadow: 0 0 50px rgba(0,0,0,.12);
     }
-
-
-
-    /* ========================================
-       DECORAÇÃO DO FUNDO
-    ======================================== */
-
 
     .page::before,
     .page::after {
-
       content: "";
-
       position: absolute;
-
       border-radius: 50%;
-
-      background:
-        rgba(255,255,255,.06);
-
+      background: rgba(255,255,255,.06);
       pointer-events: none;
-
     }
-
-
 
     .page::before {
-
       width: 280px;
-
       height: 280px;
-
       top: -160px;
-
       right: -130px;
-
     }
-
-
 
     .page::after {
-
       width: 230px;
-
       height: 230px;
-
       left: -150px;
-
       bottom: -60px;
-
     }
 
-
-
-    /* ========================================
+    /* =========================
        CONTEÚDO
-    ======================================== */
-
+    ========================= */
 
     .content {
-
       position: relative;
-
       z-index: 1;
 
-
       width: 100%;
+      max-width: 400px;
 
-      max-width: 390px;
-
+      margin: auto 0;
     }
 
-
-
-    /* ========================================
-       MARCA / LOGO
-    ======================================== */
-
+    /* =========================
+       LOGO + NOME
+    ========================= */
 
     .brand {
-
       display: inline-flex;
-
       align-items: center;
-
       justify-content: center;
+      gap: 11px;
 
-      gap: 12px;
-
-
-      margin-bottom: 34px;
-
+      margin-bottom: 20px;
     }
-
-
-
-    /*
-    Logo verdadeira
-    */
-
 
     .brand-logo {
-
-      width: 58px;
-
-      height: 58px;
+      width: 54px;
+      height: 54px;
 
       object-fit: contain;
-
       flex-shrink: 0;
-
     }
-
-
-
-    /*
-    Nome do supermercado
-    */
-
 
     .brand-name {
-
       text-align: left;
-
       text-transform: uppercase;
-
       line-height: .95;
-
     }
 
-
-
     .brand-name span {
-
       display: block;
 
       margin-bottom: 4px;
 
-
       font-size: 10px;
-
       font-weight: 800;
 
       letter-spacing: 2.3px;
 
-
       opacity: .82;
-
     }
 
-
-
     .brand-name strong {
-
       display: block;
 
-
       font-size: 23px;
-
       font-weight: 900;
 
       letter-spacing: -.5px;
-
     }
 
-
-
-    /* ========================================
+    /* =========================
        GRUPO DE OFERTAS
-    ======================================== */
-
+    ========================= */
 
     .tag {
-
       display: inline-flex;
 
       align-items: center;
 
       gap: 6px;
 
+      padding: 7px 12px;
 
-      padding:
-
-        8px
-        13px;
-
-
-      border:
-
-        1px solid
-        rgba(255,255,255,.22);
-
+      border: 1px solid rgba(255,255,255,.22);
 
       border-radius: 999px;
 
+      background: rgba(255,255,255,.11);
 
-      background:
-
-        rgba(255,255,255,.11);
-
-
-      font-size: 12px;
-
+      font-size: 11px;
       font-weight: 850;
 
       letter-spacing: .6px;
 
       text-transform: uppercase;
-
     }
 
-
-
-    /* ========================================
+    /* =========================
        TÍTULO
-    ======================================== */
-
+    ========================= */
 
     h1 {
+      max-width: 365px;
 
-      margin:
+      margin: 13px auto 8px;
 
-        17px
-        auto
-        13px;
+      font-size: clamp(30px, 8.5vw, 42px);
 
+      line-height: 1;
 
-      max-width: 360px;
-
-
-      font-size:
-
-        clamp(
-          36px,
-          10vw,
-          48px
-        );
-
-
-      line-height: .98;
-
-
-      letter-spacing: -1.8px;
-
+      letter-spacing: -1.5px;
     }
-
-
 
     h1 span {
-
-      color:
-        var(--yellow);
-
+      color: var(--yellow);
     }
-
-
-
-    /* ========================================
-       SUBTÍTULO
-    ======================================== */
-
 
     .subtitle {
+      max-width: 340px;
 
-      max-width: 345px;
+      margin: 0 auto 18px;
 
+      color: rgba(255,255,255,.90);
 
-      margin:
+      font-size: 15px;
 
-        0
-        auto;
-
-
-      color:
-
-        rgba(
-          255,
-          255,
-          255,
-          .90
-        );
-
-
-      font-size: 17px;
-
-
-      line-height: 1.45;
-
+      line-height: 1.4;
     }
 
+    /* =========================
+       CARROSSEL
+    ========================= */
 
-
-    /* ========================================
-       BOTÃO WHATSAPP
-    ======================================== */
-
-
-    .cta {
+    .carousel {
+      position: relative;
 
       width: 100%;
 
+      margin: 0 auto;
 
-      min-height: 68px;
-
-
-      margin-top: 30px;
-
-
-      padding:
-
-        18px
-        18px;
-
-
-      display: flex;
-
-
-      align-items: center;
-
-
-      justify-content: center;
-
-
-      gap: 11px;
-
+      overflow: hidden;
 
       border-radius: 18px;
 
+      background: rgba(255,255,255,.12);
 
-      background:
+      box-shadow: 0 12px 28px rgba(0,0,0,.18);
 
-        linear-gradient(
+      touch-action: pan-y;
+    }
 
-          180deg,
+    .carousel-track {
+      display: flex;
 
-          #29ca68 0%,
+      width: 100%;
 
-          var(--green) 100%
+      transition: transform .42s ease;
+    }
 
-        );
+    .slide {
+      min-width: 100%;
+      width: 100%;
 
+      flex: 0 0 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #fff;
+    }
+
+    .slide img {
+      display: block;
+
+      width: 100%;
+      height: auto;
+
+      max-height: 310px;
+
+      object-fit: contain;
+
+      background: white;
+
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    /* =========================
+       SETAS
+    ========================= */
+
+    .carousel-button {
+      position: absolute;
+
+      top: 50%;
+
+      width: 38px;
+      height: 38px;
+
+      border: 0;
+      border-radius: 50%;
+
+      transform: translateY(-50%);
+
+      background: rgba(0,0,0,.45);
 
       color: white;
 
+      font-size: 22px;
+
+      cursor: pointer;
+
+      z-index: 5;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .carousel-button.prev {
+      left: 8px;
+    }
+
+    .carousel-button.next {
+      right: 8px;
+    }
+
+    /* =========================
+       BOLINHAS
+    ========================= */
+
+    .dots {
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+
+      gap: 7px;
+
+      margin-top: 10px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+
+      padding: 0;
+
+      border: 0;
+      border-radius: 50%;
+
+      background: rgba(255,255,255,.40);
+
+      cursor: pointer;
+
+      transition:
+        width .2s ease,
+        background .2s ease;
+
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .dot.active {
+      width: 20px;
+
+      border-radius: 999px;
+
+      background: white;
+    }
+
+    /* =========================
+       BOTÃO WHATSAPP
+    ========================= */
+
+    .cta {
+      width: 100%;
+
+      min-height: 66px;
+
+      margin-top: 18px;
+
+      padding: 17px 14px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 10px;
+
+      border-radius: 18px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #29ca68 0%,
+          var(--green) 100%
+        );
+
+      color: white;
 
       text-decoration: none;
 
-
-      font-size: 17px;
-
-
+      font-size: 16px;
       font-weight: 900;
-
 
       letter-spacing: -.2px;
 
-
       box-shadow:
-
-        0 14px 30px
-        rgba(0,0,0,.18),
-
-        inset 0 -4px 0
-        rgba(0,0,0,.10);
-
+        0 14px 30px rgba(0,0,0,.18),
+        inset 0 -4px 0 rgba(0,0,0,.10);
 
       transition:
-
         transform .15s ease,
-
         box-shadow .15s ease;
 
-
-      -webkit-tap-highlight-color:
-
-        transparent;
-
+      -webkit-tap-highlight-color: transparent;
     }
-
-
 
     .cta:active {
-
-      transform:
-
-        scale(.98);
-
-
-      box-shadow:
-
-        0 8px 18px
-        rgba(0,0,0,.15),
-
-        inset 0 -3px 0
-        rgba(0,0,0,.10);
-
+      transform: scale(.98);
     }
-
-
-
-    /* ========================================
-       ÍCONE WHATSAPP
-    ======================================== */
-
 
     .whatsapp-icon {
-
-      width: 30px;
-
-      height: 30px;
+      width: 29px;
+      height: 29px;
 
       flex: 0 0 auto;
-
     }
 
-
-
-    /* ========================================
-       TEXTO ABAIXO DO BOTÃO
-    ======================================== */
-
-
     .note {
-
-      margin:
-
-        13px
-        0
-        0;
-
+      margin: 10px 0 0;
 
       font-size: 12px;
 
-
-      color:
-
-        rgba(
-          255,
-          255,
-          255,
-          .73
-        );
-
+      color: rgba(255,255,255,.73);
     }
 
+    /* =========================
+       CELULARES PEQUENOS
+    ========================= */
 
+    @media (max-height: 720px) {
 
-    /* ========================================
-       CELULARES COM TELA BAIXA
-    ======================================== */
-
-
-    @media (max-height: 620px) {
-
+      .page {
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
 
       .brand {
-
-        margin-bottom: 22px;
-
+        margin-bottom: 12px;
       }
-
 
       .brand-logo {
-
-        width: 50px;
-
-        height: 50px;
-
+        width: 45px;
+        height: 45px;
       }
 
+      .brand-name strong {
+        font-size: 20px;
+      }
 
       h1 {
-
-        font-size: 35px;
-
+        margin-top: 10px;
+        font-size: 30px;
       }
 
+      .subtitle {
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+
+      .slide img {
+        max-height: 245px;
+      }
 
       .cta {
-
-        margin-top: 22px;
-
+        margin-top: 13px;
+        min-height: 58px;
       }
-
-
     }
 
-
-
-    /* ========================================
+    /* =========================
        DESKTOP
-    ======================================== */
-
+    ========================= */
 
     @media (min-width: 481px) {
 
-
       body {
-
         padding: 20px 0;
-
       }
-
 
       .page {
-
-        min-height:
-
-          calc(
-            100dvh - 40px
-          );
-
+        min-height: calc(100dvh - 40px);
 
         border-radius: 28px;
-
       }
-
-
     }
 
-
   </style>
-
 </head>
-
 
 
 <body>
 
-
-
   <main class="page">
-
-
 
     <div class="content">
 
-
-
-      <!-- =====================================
-           LOGO + NOME
-      ====================================== -->
-
+      <!-- LOGO -->
 
       <div class="brand">
 
-
         <img
-
           src="logo.png"
-
           alt="Logo do Supermercado Paineiras"
-
           class="brand-logo"
-
         >
-
-
 
         <div class="brand-name">
 
-
           <span>
-
             Supermercado
-
           </span>
 
-
           <strong>
-
             Paineiras
-
           </strong>
-
 
         </div>
 
-
       </div>
 
 
-
-      <!-- =====================================
-           GRUPO DE OFERTAS
-      ====================================== -->
-
+      <!-- TAG -->
 
       <div class="tag">
-
         🔥 Grupo de ofertas
-
       </div>
 
 
-
-      <!-- =====================================
-           CTA
-      ====================================== -->
-
+      <!-- CTA PRINCIPAL -->
 
       <h1>
 
         Ofertas direto no seu
 
         <span>
-
           WhatsApp!
-
         </span>
 
       </h1>
 
 
-
-      <!-- =====================================
-           TEXTO
-      ====================================== -->
-
-
       <p class="subtitle">
 
-        Entre no grupo do Supermercado Paineiras
-        e acompanhe nossas promoções.
+        Confira algumas ofertas e entre no grupo
+        para receber nossas promoções.
 
       </p>
 
 
+      <!-- =========================
+           CARROSSEL
+      ========================== -->
 
-      <!-- =====================================
+      <div
+        class="carousel"
+        id="carousel"
+      >
+
+        <div
+          class="carousel-track"
+          id="carousel-track"
+        >
+
+          <!-- PROMO 1 -->
+
+          <div class="slide">
+
+            <img
+              src="promo1.png"
+              alt="Oferta 1 do Supermercado Paineiras"
+            >
+
+          </div>
+
+
+          <!-- PROMO 2 -->
+
+          <div class="slide">
+
+            <img
+              src="promo2.png"
+              alt="Oferta 2 do Supermercado Paineiras"
+            >
+
+          </div>
+
+
+          <!-- PROMO 3 -->
+
+          <div class="slide">
+
+            <img
+              src="promo3.png"
+              alt="Oferta 3 do Supermercado Paineiras"
+            >
+
+          </div>
+
+
+          <!-- PROMO 4 -->
+
+          <div class="slide">
+
+            <img
+              src="promo4.png"
+              alt="Oferta 4 do Supermercado Paineiras"
+            >
+
+          </div>
+
+
+          <!-- PROMO 5 -->
+
+          <div class="slide">
+
+            <img
+              src="promo5.png"
+              alt="Oferta 5 do Supermercado Paineiras"
+            >
+
+          </div>
+
+
+          <!-- PROMO 6 -->
+
+          <div class="slide">
+
+            <img
+              src="promo6.png"
+              alt="Oferta 6 do Supermercado Paineiras"
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- SETA ESQUERDA -->
+
+        <button
+          class="carousel-button prev"
+          id="prev-button"
+          type="button"
+          aria-label="Oferta anterior"
+        >
+          ‹
+        </button>
+
+
+        <!-- SETA DIREITA -->
+
+        <button
+          class="carousel-button next"
+          id="next-button"
+          type="button"
+          aria-label="Próxima oferta"
+        >
+          ›
+        </button>
+
+      </div>
+
+
+      <!-- BOLINHAS -->
+
+      <div
+        class="dots"
+        id="dots"
+      ></div>
+
+
+      <!-- =========================
            BOTÃO WHATSAPP
-      ====================================== -->
-
+      ========================== -->
 
       <a
 
@@ -814,47 +707,24 @@
 
         rel="noopener noreferrer"
 
-        aria-label="Entrar no grupo de ofertas do Supermercado Paineiras no WhatsApp"
-
       >
 
-
-
         <svg
-
           class="whatsapp-icon"
-
           viewBox="0 0 32 32"
-
           aria-hidden="true"
-
         >
 
-
           <path
-
             fill="currentColor"
-
             d="M16.02 3.2A12.73 12.73 0 0 0 5.25 22.7L3.2 28.8l6.29-2.01a12.77 12.77 0 1 0 6.53-23.59Zm0 23.21c-2.03 0-4.01-.58-5.72-1.68l-.41-.25-3.73 1.19 1.22-3.63-.27-.43a10.48 10.48 0 1 1 8.91 4.8Zm5.75-7.85c-.32-.16-1.87-.92-2.16-1.03-.29-.1-.5-.16-.71.16-.21.31-.81 1.02-.99 1.23-.18.21-.37.24-.68.08-.32-.16-1.33-.49-2.54-1.57-.94-.84-1.57-1.87-1.75-2.19-.18-.31-.02-.48.14-.64.14-.14.32-.37.47-.55.16-.18.21-.31.32-.52.1-.21.05-.39-.03-.55-.08-.16-.71-1.71-.97-2.34-.26-.62-.52-.54-.71-.55h-.61c-.21 0-.55.08-.84.39-.29.32-1.1 1.08-1.1 2.63 0 1.55 1.13 3.05 1.29 3.26.16.21 2.22 3.39 5.38 4.75.75.32 1.34.52 1.8.67.76.24 1.45.21 1.99.13.61-.09 1.87-.76 2.13-1.5.26-.74.26-1.37.18-1.5-.08-.13-.29-.21-.61-.37Z"
-
-          />
-
+          >
 
         </svg>
 
-
-
         ENTRAR NO GRUPO DE OFERTAS
 
-
-
       </a>
-
-
-
-      <!-- =====================================
-           TEXTO FINAL
-      ====================================== -->
 
 
       <p class="note">
@@ -863,23 +733,294 @@
 
       </p>
 
-
-
     </div>
-
-
 
   </main>
 
 
-
-  <!-- =========================================
-       RASTREAMENTO DO CLIQUE
-  ========================================== -->
-
-
   <script>
 
+    /* ===============================
+       CARROSSEL
+    =============================== */
+
+    const track =
+      document.getElementById("carousel-track");
+
+    const slides =
+      Array.from(
+        document.querySelectorAll(".slide")
+      );
+
+    const prevButton =
+      document.getElementById("prev-button");
+
+    const nextButton =
+      document.getElementById("next-button");
+
+    const dotsContainer =
+      document.getElementById("dots");
+
+    const carousel =
+      document.getElementById("carousel");
+
+
+    let currentSlide = 0;
+
+    let autoplay;
+
+    let touchStartX = 0;
+
+    let touchEndX = 0;
+
+
+
+    /* ===============================
+       CRIAR BOLINHAS
+    =============================== */
+
+    slides.forEach(
+      function(slide, index) {
+
+        const dot =
+          document.createElement("button");
+
+        dot.classList.add("dot");
+
+        dot.type = "button";
+
+        dot.setAttribute(
+          "aria-label",
+          "Ir para oferta " + (index + 1)
+        );
+
+
+        dot.addEventListener(
+          "click",
+          function() {
+
+            currentSlide = index;
+
+            updateCarousel();
+
+            restartAutoplay();
+
+          }
+        );
+
+
+        dotsContainer.appendChild(dot);
+
+      }
+    );
+
+
+    const dots =
+      Array.from(
+        document.querySelectorAll(".dot")
+      );
+
+
+
+    /* ===============================
+       ATUALIZAR CARROSSEL
+    =============================== */
+
+    function updateCarousel() {
+
+      track.style.transform =
+        "translateX(-" +
+        currentSlide * 100 +
+        "%)";
+
+
+      dots.forEach(
+        function(dot, index) {
+
+          dot.classList.toggle(
+            "active",
+            index === currentSlide
+          );
+
+        }
+      );
+
+    }
+
+
+
+    /* ===============================
+       PRÓXIMA IMAGEM
+    =============================== */
+
+    function nextSlide() {
+
+      currentSlide =
+        (currentSlide + 1)
+        % slides.length;
+
+      updateCarousel();
+
+    }
+
+
+
+    /* ===============================
+       IMAGEM ANTERIOR
+    =============================== */
+
+    function prevSlide() {
+
+      currentSlide--;
+
+      if (currentSlide < 0) {
+
+        currentSlide =
+          slides.length - 1;
+
+      }
+
+      updateCarousel();
+
+    }
+
+
+
+    nextButton.addEventListener(
+      "click",
+      function() {
+
+        nextSlide();
+
+        restartAutoplay();
+
+      }
+    );
+
+
+    prevButton.addEventListener(
+      "click",
+      function() {
+
+        prevSlide();
+
+        restartAutoplay();
+
+      }
+    );
+
+
+
+    /* ===============================
+       TROCA AUTOMÁTICA
+
+       4500 = 4,5 segundos
+    =============================== */
+
+    function startAutoplay() {
+
+      autoplay =
+        setInterval(
+          nextSlide,
+          4500
+        );
+
+    }
+
+
+
+    function restartAutoplay() {
+
+      clearInterval(autoplay);
+
+      startAutoplay();
+
+    }
+
+
+
+    /* ===============================
+       SWIPE NO CELULAR
+    =============================== */
+
+    carousel.addEventListener(
+      "touchstart",
+      function(event) {
+
+        touchStartX =
+          event.changedTouches[0].screenX;
+
+      },
+      {
+        passive: true
+      }
+    );
+
+
+    carousel.addEventListener(
+      "touchend",
+      function(event) {
+
+        touchEndX =
+          event.changedTouches[0].screenX;
+
+        handleSwipe();
+
+      },
+      {
+        passive: true
+      }
+    );
+
+
+    function handleSwipe() {
+
+      const difference =
+        touchStartX - touchEndX;
+
+
+      /*
+      Swipe para esquerda
+      */
+
+      if (difference > 45) {
+
+        nextSlide();
+
+        restartAutoplay();
+
+      }
+
+
+      /*
+      Swipe para direita
+      */
+
+      if (difference < -45) {
+
+        prevSlide();
+
+        restartAutoplay();
+
+      }
+
+    }
+
+
+
+    /* ===============================
+       INICIALIZAÇÃO
+    =============================== */
+
+    updateCarousel();
+
+    startAutoplay();
+
+
+
+    /* ===============================
+       META PIXEL
+    =============================== */
 
     document
 
@@ -888,40 +1029,24 @@
       )
 
       .addEventListener(
-
         "click",
-
-        function () {
-
+        function() {
 
           if (
-
             typeof fbq === "function"
-
           ) {
 
-
             fbq(
-
               "trackCustom",
-
               "CliqueWhatsApp"
-
             );
-
 
           }
 
-
         }
-
       );
-
 
   </script>
 
-
-
 </body>
-
 </html>
