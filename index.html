@@ -1,403 +1,241 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-  <title>Ofertas Supermercado Paineiras | Grupo no WhatsApp</title>
-  <meta name="description" content="Entre no grupo de ofertas do Supermercado Paineiras e receba promoções pelo WhatsApp." />
-  <meta name="theme-color" content="#d71920" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Ofertas Supermercado Paineiras" />
-  <meta property="og:description" content="Entre no grupo e receba nossas ofertas pelo WhatsApp." />
-  <meta property="og:type" content="website" />
+  <title>Grupo de Ofertas | Supermercado Paineiras</title>
+  <meta name="description" content="Entre no grupo de ofertas do Supermercado Paineiras no WhatsApp.">
+  <meta name="theme-color" content="#e31e2f">
 
   <!--
     META PIXEL
-    Quando você tiver o ID do Pixel, cole o código oficial do Meta Pixel aqui.
-    Também há um evento de clique no botão no JavaScript no final da página.
+    Quando você tiver o ID do Pixel, cole o código oficial aqui.
+    O clique no botão já está preparado no JavaScript no final da página.
   -->
 
   <style>
     :root {
-      --red: #e21d2b;
-      --red-dark: #bd101c;
-      --yellow: #ffd43b;
-      --green: #20b858;
-      --green-dark: #129345;
-      --ink: #20242b;
-      --muted: #667085;
-      --paper: #ffffff;
-      --soft: #fff7e1;
-      --line: rgba(32, 36, 43, .09);
-      --shadow: 0 18px 55px rgba(31, 35, 41, .14);
+      --red: #e31e2f;
+      --red-dark: #bd1220;
+      --yellow: #ffd83d;
+      --green: #20bd5a;
+      --green-dark: #149447;
+      --white: #ffffff;
     }
 
     * {
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-      background: #f7f7f8;
+    html, body {
+      margin: 0;
+      min-height: 100%;
     }
 
     body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--ink);
-      background:
-        radial-gradient(circle at 10% 0%, rgba(255, 212, 59, .26), transparent 28rem),
-        radial-gradient(circle at 95% 12%, rgba(226, 29, 43, .12), transparent 23rem),
-        #f7f7f8;
-    }
-
-    a {
-      color: inherit;
+      min-height: 100dvh;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f2f2f2;
+      color: var(--white);
     }
 
     .page {
-      width: min(100%, 480px);
-      min-height: 100vh;
-      margin: 0 auto;
-      background: var(--paper);
-      overflow: hidden;
-      box-shadow: 0 0 70px rgba(30, 32, 36, .08);
-    }
-
-    .hero {
       position: relative;
-      padding: 24px 22px 30px;
+      width: min(100%, 480px);
+      min-height: 100dvh;
+      margin: 0 auto;
+      padding:
+        max(30px, env(safe-area-inset-top))
+        24px
+        max(28px, env(safe-area-inset-bottom));
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      background:
-        radial-gradient(circle at 50% -10%, rgba(255, 255, 255, .38), transparent 15rem),
-        linear-gradient(155deg, #f52c39 0%, var(--red) 48%, var(--red-dark) 100%);
-      color: white;
       overflow: hidden;
+
+      background:
+        radial-gradient(circle at 50% 5%, rgba(255,255,255,.18), transparent 28%),
+        linear-gradient(160deg, #f22c3c 0%, var(--red) 48%, var(--red-dark) 100%);
+
+      box-shadow: 0 0 50px rgba(0,0,0,.12);
     }
 
-    .hero::before,
-    .hero::after {
+    .page::before,
+    .page::after {
       content: "";
       position: absolute;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .08);
+      border-radius: 50%;
+      background: rgba(255,255,255,.06);
       pointer-events: none;
     }
 
-    .hero::before {
-      width: 220px;
-      height: 220px;
+    .page::before {
+      width: 280px;
+      height: 280px;
+      top: -160px;
       right: -130px;
-      top: 90px;
     }
 
-    .hero::after {
-      width: 160px;
-      height: 160px;
-      left: -100px;
-      bottom: 40px;
+    .page::after {
+      width: 230px;
+      height: 230px;
+      left: -150px;
+      bottom: -60px;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 390px;
     }
 
     .brand {
-      position: relative;
-      z-index: 1;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      margin-bottom: 28px;
+      gap: 11px;
+      margin-bottom: 34px;
     }
 
-    .brand-mark {
-      width: 46px;
-      height: 46px;
-      border-radius: 14px;
+    .brand-icon {
+      width: 52px;
+      height: 52px;
       display: grid;
       place-items: center;
+      border-radius: 16px;
       background: var(--yellow);
       color: var(--red-dark);
-      font-size: 25px;
-      box-shadow: inset 0 -4px 0 rgba(0, 0, 0, .08);
+      font-size: 28px;
+      box-shadow: inset 0 -4px 0 rgba(0,0,0,.08);
     }
 
-    .brand-text {
+    .brand-name {
       text-align: left;
-      line-height: .95;
-      font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: -.4px;
+      line-height: .95;
     }
 
-    .brand-text small {
+    .brand-name span {
       display: block;
-      margin-bottom: 3px;
+      margin-bottom: 4px;
       font-size: 10px;
-      letter-spacing: 2.2px;
-      opacity: .84;
+      font-weight: 800;
+      letter-spacing: 2.3px;
+      opacity: .82;
     }
 
-    .brand-text strong {
-      font-size: 21px;
+    .brand-name strong {
+      font-size: 23px;
+      font-weight: 900;
+      letter-spacing: -.5px;
     }
 
-    .eyebrow {
-      position: relative;
-      z-index: 1;
+    .tag {
       display: inline-flex;
-      gap: 7px;
       align-items: center;
-      padding: 7px 12px;
+      gap: 6px;
+      padding: 8px 13px;
       border: 1px solid rgba(255,255,255,.22);
       border-radius: 999px;
-      background: rgba(255,255,255,.12);
+      background: rgba(255,255,255,.11);
       font-size: 12px;
-      font-weight: 800;
+      font-weight: 850;
+      letter-spacing: .6px;
       text-transform: uppercase;
-      letter-spacing: .7px;
     }
 
     h1 {
-      position: relative;
-      z-index: 1;
-      max-width: 390px;
-      margin: 14px auto 12px;
-      font-size: clamp(34px, 9vw, 47px);
+      margin: 17px auto 13px;
+      max-width: 360px;
+      font-size: clamp(36px, 10vw, 48px);
       line-height: .98;
       letter-spacing: -1.8px;
     }
 
-    h1 em {
+    h1 span {
       color: var(--yellow);
-      font-style: normal;
     }
 
     .subtitle {
-      position: relative;
-      z-index: 1;
-      max-width: 360px;
+      max-width: 345px;
       margin: 0 auto;
       color: rgba(255,255,255,.9);
-      font-size: 16px;
-      line-height: 1.48;
-    }
-
-    .offer-card {
-      position: relative;
-      z-index: 1;
-      margin: 25px auto 0;
-      padding: 18px 18px 16px;
-      border: 1px solid rgba(255,255,255,.18);
-      border-radius: 22px;
-      background: rgba(255,255,255,.97);
-      color: var(--ink);
-      box-shadow: var(--shadow);
-      text-align: left;
-    }
-
-    .offer-label {
-      display: inline-block;
-      margin-bottom: 12px;
-      padding: 6px 9px;
-      border-radius: 8px;
-      background: #fff0f1;
-      color: var(--red);
-      font-size: 11px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: .7px;
-    }
-
-    .offer-card h2 {
-      margin: 0 0 8px;
-      font-size: 22px;
-      line-height: 1.12;
-      letter-spacing: -.6px;
-    }
-
-    .offer-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
+      font-size: 17px;
       line-height: 1.45;
     }
 
     .cta {
-      position: relative;
+      width: 100%;
+      min-height: 68px;
+      margin-top: 30px;
+      padding: 18px 18px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      width: 100%;
-      min-height: 59px;
-      margin-top: 16px;
-      padding: 15px 18px;
-      border: 0;
-      border-radius: 15px;
-      background: linear-gradient(180deg, #28c768 0%, var(--green) 100%);
+      gap: 11px;
+
+      border-radius: 18px;
+      background: linear-gradient(180deg, #29ca68 0%, var(--green) 100%);
       color: white;
+
       text-decoration: none;
-      text-align: center;
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 900;
       letter-spacing: -.2px;
-      box-shadow: 0 10px 23px rgba(32, 184, 88, .28), inset 0 -3px 0 rgba(0,0,0,.09);
-      transition: transform .16s ease, box-shadow .16s ease;
+
+      box-shadow:
+        0 14px 30px rgba(0,0,0,.18),
+        inset 0 -4px 0 rgba(0,0,0,.10);
+
+      transition: transform .15s ease, box-shadow .15s ease;
       -webkit-tap-highlight-color: transparent;
     }
 
     .cta:active {
-      transform: scale(.985);
-      box-shadow: 0 6px 15px rgba(32, 184, 88, .25);
+      transform: scale(.98);
+      box-shadow:
+        0 8px 18px rgba(0,0,0,.15),
+        inset 0 -3px 0 rgba(0,0,0,.10);
     }
 
-    .wa {
-      width: 27px;
-      height: 27px;
+    .whatsapp-icon {
+      width: 30px;
+      height: 30px;
       flex: 0 0 auto;
     }
 
-    .microcopy {
-      margin-top: 10px !important;
-      text-align: center;
-      color: #747b86 !important;
-      font-size: 12px !important;
+    .note {
+      margin: 13px 0 0;
+      font-size: 12px;
+      color: rgba(255,255,255,.73);
     }
 
-    .content {
-      padding: 30px 22px 110px;
-    }
+    @media (max-height: 620px) {
+      .brand {
+        margin-bottom: 22px;
+      }
 
-    .section-title {
-      margin: 0 0 18px;
-      text-align: center;
-      font-size: 25px;
-      line-height: 1.12;
-      letter-spacing: -.7px;
-    }
+      h1 {
+        font-size: 35px;
+      }
 
-    .benefits {
-      display: grid;
-      gap: 12px;
-    }
-
-    .benefit {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      padding: 15px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: #fff;
-    }
-
-    .benefit-icon {
-      width: 42px;
-      height: 42px;
-      flex: 0 0 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 13px;
-      background: var(--soft);
-      font-size: 20px;
-    }
-
-    .benefit strong {
-      display: block;
-      margin-bottom: 2px;
-      font-size: 14px;
-    }
-
-    .benefit span {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.35;
-    }
-
-    .second-cta {
-      margin-top: 24px;
-      padding: 21px 18px;
-      border-radius: 20px;
-      background: linear-gradient(145deg, #fff7df 0%, #fff2c1 100%);
-      text-align: center;
-    }
-
-    .second-cta h3 {
-      margin: 0 0 6px;
-      font-size: 21px;
-      line-height: 1.15;
-    }
-
-    .second-cta p {
-      margin: 0 0 2px;
-      color: #6b6250;
-      font-size: 13px;
-      line-height: 1.4;
-    }
-
-    footer {
-      padding: 24px 22px 32px;
-      border-top: 1px solid var(--line);
-      color: #89909a;
-      background: #fbfbfc;
-      text-align: center;
-      font-size: 11px;
-      line-height: 1.55;
-    }
-
-    footer strong {
-      color: #59606a;
-    }
-
-    footer a {
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-
-    .sticky {
-      position: fixed;
-      z-index: 20;
-      left: 50%;
-      bottom: 0;
-      width: min(100%, 480px);
-      transform: translateX(-50%);
-      padding: 10px 14px max(10px, env(safe-area-inset-bottom));
-      background: linear-gradient(to top, rgba(255,255,255,1) 70%, rgba(255,255,255,.90));
-      border-top: 1px solid var(--line);
-      box-shadow: 0 -8px 24px rgba(33, 36, 41, .06);
-    }
-
-    .sticky .cta {
-      margin: 0;
-      min-height: 54px;
-      border-radius: 14px;
+      .cta {
+        margin-top: 22px;
+      }
     }
 
     @media (min-width: 481px) {
       body {
-        padding: 24px 0;
+        padding: 20px 0;
       }
 
       .page {
-        min-height: calc(100vh - 48px);
+        min-height: calc(100dvh - 40px);
         border-radius: 28px;
-      }
-
-      .sticky {
-        bottom: 16px;
-        width: 452px;
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        box-shadow: 0 15px 45px rgba(33, 36, 41, .15);
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      * {
-        scroll-behavior: auto !important;
-        transition: none !important;
       }
     }
   </style>
@@ -405,124 +243,59 @@
 
 <body>
   <main class="page">
-    <section class="hero">
+    <div class="content">
+
       <div class="brand">
-        <div class="brand-mark" aria-hidden="true">🛒</div>
-        <div class="brand-text">
-          <small>Supermercado</small>
+        <div class="brand-icon" aria-hidden="true">🛒</div>
+
+        <div class="brand-name">
+          <span>Supermercado</span>
           <strong>Paineiras</strong>
         </div>
       </div>
 
-      <div class="eyebrow">🔥 Grupo de ofertas</div>
+      <div class="tag">
+        🔥 Grupo de ofertas
+      </div>
 
-      <h1>Economize nas compras <em>toda semana.</em></h1>
+      <h1>
+        Ofertas direto no seu <span>WhatsApp!</span>
+      </h1>
 
       <p class="subtitle">
-        Entre no nosso grupo de WhatsApp e receba as ofertas do
-        Supermercado Paineiras direto no celular.
+        Entre no grupo do Supermercado Paineiras e acompanhe nossas promoções.
       </p>
 
-      <div class="offer-card">
-        <span class="offer-label">Ofertas no WhatsApp</span>
-        <h2>Quer saber das promoções antes de fazer suas compras?</h2>
-        <p>
-          Toque no botão abaixo para abrir o WhatsApp e entrar no grupo de ofertas.
-        </p>
+      <a
+        id="whatsapp-button"
+        class="cta"
+        href="https://chat.whatsapp.com/DdbEySF0wq5I4gynSdXYmL"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Entrar no grupo de ofertas do Supermercado Paineiras no WhatsApp"
+      >
+        <svg class="whatsapp-icon" viewBox="0 0 32 32" aria-hidden="true">
+          <path fill="currentColor" d="M16.02 3.2A12.73 12.73 0 0 0 5.25 22.7L3.2 28.8l6.29-2.01a12.77 12.77 0 1 0 6.53-23.59Zm0 23.21c-2.03 0-4.01-.58-5.72-1.68l-.41-.25-3.73 1.19 1.22-3.63-.27-.43a10.48 10.48 0 1 1 8.91 4.8Zm5.75-7.85c-.32-.16-1.87-.92-2.16-1.03-.29-.1-.5-.16-.71.16-.21.31-.81 1.02-.99 1.23-.18.21-.37.24-.68.08-.32-.16-1.33-.49-2.54-1.57-.94-.84-1.57-1.87-1.75-2.19-.18-.31-.02-.48.14-.64.14-.14.32-.37.47-.55.16-.18.21-.31.32-.52.1-.21.05-.39-.03-.55-.08-.16-.71-1.71-.97-2.34-.26-.62-.52-.54-.71-.55h-.61c-.21 0-.55.08-.84.39-.29.32-1.1 1.08-1.1 2.63 0 1.55 1.13 3.05 1.29 3.26.16.21 2.22 3.39 5.38 4.75.75.32 1.34.52 1.8.67.76.24 1.45.21 1.99.13.61-.09 1.87-.76 2.13-1.5.26-.74.26-1.37.18-1.5-.08-.13-.29-.21-.61-.37Z"/>
+        </svg>
 
-        <a
-          class="cta js-whatsapp"
-          href="https://chat.whatsapp.com/DdbEySF0wq5I4gynSdXYmL"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Entrar no grupo de ofertas do Supermercado Paineiras no WhatsApp"
-        >
-          <svg class="wa" viewBox="0 0 32 32" aria-hidden="true">
-            <path fill="currentColor" d="M16.02 3.2A12.73 12.73 0 0 0 5.25 22.7L3.2 28.8l6.29-2.01a12.77 12.77 0 1 0 6.53-23.59Zm0 23.21c-2.03 0-4.01-.58-5.72-1.68l-.41-.25-3.73 1.19 1.22-3.63-.27-.43a10.48 10.48 0 1 1 8.91 4.8Zm5.75-7.85c-.32-.16-1.87-.92-2.16-1.03-.29-.1-.5-.16-.71.16-.21.31-.81 1.02-.99 1.23-.18.21-.37.24-.68.08-.32-.16-1.33-.49-2.54-1.57-.94-.84-1.57-1.87-1.75-2.19-.18-.31-.02-.48.14-.64.14-.14.32-.37.47-.55.16-.18.21-.31.32-.52.1-.21.05-.39-.03-.55-.08-.16-.71-1.71-.97-2.34-.26-.62-.52-.54-.71-.55h-.61c-.21 0-.55.08-.84.39-.29.32-1.1 1.08-1.1 2.63 0 1.55 1.13 3.05 1.29 3.26.16.21 2.22 3.39 5.38 4.75.75.32 1.34.52 1.8.67.76.24 1.45.21 1.99.13.61-.09 1.87-.76 2.13-1.5.26-.74.26-1.37.18-1.5-.08-.13-.29-.21-.61-.37Z"/>
-          </svg>
-          ENTRAR NO GRUPO DE OFERTAS
-        </a>
+        ENTRAR NO GRUPO DE OFERTAS
+      </a>
 
-        <p class="microcopy">A entrada é gratuita e você pode sair quando quiser.</p>
-      </div>
-    </section>
+      <p class="note">
+        É grátis. Toque no botão para entrar.
+      </p>
 
-    <section class="content">
-      <h2 class="section-title">Por que entrar no grupo?</h2>
-
-      <div class="benefits">
-        <div class="benefit">
-          <div class="benefit-icon" aria-hidden="true">🏷️</div>
-          <div>
-            <strong>Promoções do Paineiras</strong>
-            <span>Veja ofertas para aproveitar nas suas compras.</span>
-          </div>
-        </div>
-
-        <div class="benefit">
-          <div class="benefit-icon" aria-hidden="true">📱</div>
-          <div>
-            <strong>Direto no WhatsApp</strong>
-            <span>Você recebe as novidades sem precisar procurar.</span>
-          </div>
-        </div>
-
-        <div class="benefit">
-          <div class="benefit-icon" aria-hidden="true">⚡</div>
-          <div>
-            <strong>Rápido e simples</strong>
-            <span>Um toque no botão e você vai direto para o grupo.</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="second-cta">
-        <h3>Não perca as próximas ofertas 🛒</h3>
-        <p>Entre agora no grupo do Supermercado Paineiras.</p>
-
-        <a
-          class="cta js-whatsapp"
-          href="https://chat.whatsapp.com/DdbEySF0wq5I4gynSdXYmL"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          ENTRAR NO WHATSAPP
-        </a>
-      </div>
-    </section>
-
-    <footer>
-      <strong>Supermercado Paineiras</strong><br>
-      Página destinada à divulgação de ofertas e ao acesso ao grupo de WhatsApp.<br>
-      WhatsApp é uma marca de seus respectivos proprietários.
-    </footer>
+    </div>
   </main>
 
-  <div class="sticky">
-    <a
-      class="cta js-whatsapp"
-      href="https://chat.whatsapp.com/DdbEySF0wq5I4gynSdXYmL"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <svg class="wa" viewBox="0 0 32 32" aria-hidden="true">
-        <path fill="currentColor" d="M16.02 3.2A12.73 12.73 0 0 0 5.25 22.7L3.2 28.8l6.29-2.01a12.77 12.77 0 1 0 6.53-23.59Zm0 23.21c-2.03 0-4.01-.58-5.72-1.68l-.41-.25-3.73 1.19 1.22-3.63-.27-.43a10.48 10.48 0 1 1 8.91 4.8Zm5.75-7.85c-.32-.16-1.87-.92-2.16-1.03-.29-.1-.5-.16-.71.16-.21.31-.81 1.02-.99 1.23-.18.21-.37.24-.68.08-.32-.16-1.33-.49-2.54-1.57-.94-.84-1.57-1.87-1.75-2.19-.18-.31-.02-.48.14-.64.14-.14.32-.37.47-.55.16-.18.21-.31.32-.52.1-.21.05-.39-.03-.55-.08-.16-.71-1.71-.97-2.34-.26-.62-.52-.54-.71-.55h-.61c-.21 0-.55.08-.84.39-.29.32-1.1 1.08-1.1 2.63 0 1.55 1.13 3.05 1.29 3.26.16.21 2.22 3.39 5.38 4.75.75.32 1.34.52 1.8.67.76.24 1.45.21 1.99.13.61-.09 1.87-.76 2.13-1.5.26-.74.26-1.37.18-1.5-.08-.13-.29-.21-.61-.37Z"/>
-      </svg>
-      ENTRAR NO GRUPO
-    </a>
-  </div>
-
   <script>
-    // Evento opcional para o Meta Pixel.
-    // Quando o Pixel estiver instalado, este código registra o clique
-    // como um evento personalizado chamado "CliqueWhatsApp".
-    document.querySelectorAll(".js-whatsapp").forEach(function (button) {
-      button.addEventListener("click", function () {
+    document
+      .getElementById("whatsapp-button")
+      .addEventListener("click", function () {
         if (typeof fbq === "function") {
           fbq("trackCustom", "CliqueWhatsApp");
         }
       });
-    });
   </script>
 </body>
 </html>
